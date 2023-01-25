@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="script.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        text-align: center;
+    }
+
+    button {
+        padding: 20px;
+        background-color: rgb(55, 182, 4);
+        border-radius: 1rem;
+        cursor: pointer;
+    }
+
+
+
+    @keyframes mover {
+        0% {
+            transform: translateY(0px);
+            transform: rotate(45deg);
+            opacity: 0;
+        }
+
+        50% {
+            transform: scale(50%);
+        }
+
+        100% {
+            transform: translateY(-15px);
+            transform: rotate(-45deg);
+            opacity: 1;
+        }
+    }
+
+    @keyframes aparecer {
+        to {
+            opacity: 0;
+        }
+
+        from {
+            opacity: 1;
+        }
+    }
+
+    .animar{
+        animation: mover 0.5s infinite alternate;
+    }
+
+    .aparecer{
+        animation: aparecer 1.5s ease-in;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <h1>Dado Vitual D7 | Virtual Dice</h1>
+        <section>
+            <p id="sorteado" class="centro">?</p>
+            <figure>
+                <img class='' src="imgs/dado/0.png" alt="Dado" id="imgDado">
+            </figure>
+        </section>
+        <p class="centro"><button type="submit" id="btn-Sortear">Sortear</button></p>
+    </div>
+
+    <audio preLoad id="dadoRolando" src="assets/dado-rolando.mp3" type="audio/mpeg"></audio>
+
+</body>
+
+</html>
